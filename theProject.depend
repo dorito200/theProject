@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1638300485 source:c:\users\jdari\documents\codeblocksprojects\theproject\theproject\main.cpp
+	<iostream>
+	<cassert>
+	<iosfwd>
+	<fstream>
+	<iostream>
+	<iomanip>
+	<cstdlib>
+	<limits>
+	<math.h>
+
