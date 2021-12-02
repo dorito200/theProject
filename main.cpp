@@ -42,33 +42,47 @@ int main()
 {
     initialDisplay(); //used to display the universities
     int userChoice = 0; //used to control menu
+    int j=25;
 
 
     //below is code initializing the parallel arrays and pointers
-     int* labPtr[NUMLABS];  // 8 ptrs, one for each lab
-     for(auto i=0; i<NUMLABS; ++i)
-        {
-        labPtr[i] = new int[LABSIZES[NUMLABS]]; // create each lab, matching each size
-        }
+   int** labPtr = new int*[NUMLABS];
+    for(auto i=0; i<NUMLABS; ++i){
+        labPtr[i]=new int[j];
+    }
 
     for(auto i = 0; i < NUMLABS; ++i)
         {
         for(auto j=0; j<LABSIZES[NUMLABS]; ++j)
             {
-                labPtr[i][j] = 0;
+                labPtr[i][j] = NULL;
             }
-       }
-
-    string* namePtr[NUMLABS];
-    for(auto i=0; i<NUMLABS; ++i)
-        {
-        namePtr[i] = new string[LABSIZES[NUMLABS]];
         }
 
-    int* timePtr[NUMLABS];  // 8 ptrs, one for each lab
-        for(auto i=0; i<NUMLABS; ++i)
+    string** namePtr = new string*[NUMLABS];
+    for(auto i=0; i<NUMLABS; ++i){
+        namePtr[i]=new string[j];
+    }
+
+    for(auto i = 0; i < NUMLABS; ++i)
         {
-        timePtr[i] = new int[LABSIZES[NUMLABS]]; // create each lab, matching each size
+        for(auto j=0; j<LABSIZES[NUMLABS]; ++j)
+            {
+                namePtr[i][j] = " ";
+            }
+        }
+
+    int** timePtr = new int*[NUMLABS];
+    for(auto i=0; i<NUMLABS; ++i){
+        timePtr[i]=new int[j];
+    }
+
+    for(auto i = 0; i < NUMLABS; ++i)
+        {
+        for(auto j=0; j<LABSIZES[NUMLABS]; ++j)
+            {
+                timePtr[i][j] = NULL;
+            }
         }
 
     //negativeOne(labPtr);
@@ -94,6 +108,7 @@ int main()
                     display(labPtr); //displays a chosen lab if chosen
                     break;
                 case(5): //closes menu and ends program
+                    cout << "Goodbye!" << endl;
                     break;
             }
         }while(userChoice != 5);
