@@ -210,20 +210,6 @@ void logIn(int **labPtr, string **namePtr, int **timePtr){
 
     cout << "User " << std::setfill(' ') << name << " has been logged in" << endl;
 
- for(auto i=0; i < NUMLABS; ++i){
-        delete[]labPtr[i];
-    }
-        delete[]labPtr;
-
-    for(auto i=0; i < NUMLABS; ++i){
-        delete[]namePtr[i];
-    }
-        delete[]namePtr;
-
-    for(auto i=0; i < NUMLABS; ++i){
-        delete[]timePtr[i];
-    }
-        delete[]timePtr;
 }
 
 bool validateInput(int userChoice, int range1, int range2){
